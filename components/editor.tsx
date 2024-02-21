@@ -13,13 +13,13 @@ import "@blocknote/react/style.css";
 
 import { useEdgeStore } from "@/lib/edgestore"
 
-interface EditorProps {
+export interface EditorProps {
     onChange: (value:string) => void
     initialContent?: string
     editable?: boolean
 }
 
-export const Editor = ({
+const Editor = ({
     onChange,
     initialContent,
     editable
@@ -53,3 +53,5 @@ export const Editor = ({
         </div>
     )
 }
+
+export default Editor;

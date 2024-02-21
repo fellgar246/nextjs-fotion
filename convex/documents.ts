@@ -105,6 +105,7 @@ export const create = mutation({
             isPublished: false,
         })
 
+        return document;
     }
 })
 
