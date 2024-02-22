@@ -28,11 +28,7 @@ export const Publish = ({
   const [copied, setCopied] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  //const url = `${origin}/preview/${initialData._id}`;
-  let url = '';
-    if (initialData && initialData._id) {
-    url = `${origin}/preview/${initialData._id}`;
-    }
+  const url = `${origin}/preview/${initialData._id}`;
 
   const onPublish = () => {
     setIsSubmitting(true);
@@ -54,7 +50,7 @@ export const Publish = ({
     setIsSubmitting(true);
 
     const promise = update({
-      id: initialData?._id,
+      id: initialData._id,
       isPublished: false,
     })
       .finally(() => setIsSubmitting(false));
@@ -80,7 +76,7 @@ export const Publish = ({
       <PopoverTrigger asChild>
         <Button size="sm" variant="ghost">
           Publish 
-          {initialData?.isPublished && (
+          {initialData.isPublished && (
             <Globe
               className="text-sky-500 w-4 h-4 ml-2"
             />
@@ -93,7 +89,7 @@ export const Publish = ({
         alignOffset={8}
         forceMount
       >
-        {initialData?.isPublished ? (
+        {initialData.isPublished ? (
           <div className="space-y-4">
             <div className="flex items-center gap-x-2">
               <Globe className="text-sky-500 animate-pulse h-4 w-4" />
