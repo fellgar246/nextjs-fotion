@@ -34,9 +34,10 @@ const Editor = ({
 
         return response.url
     }
-
+ 
     const editor: BlockNoteEditor = useBlockNote({
         editable,
+        // @ts-ignore
         initialContent: initialContent ? JSON.parse(initialContent) as PartialBlock[] : undefined,
         onEditorContentChange: (editor) => {
             onChange(JSON.stringify(editor.topLevelBlocks, null, 2))
