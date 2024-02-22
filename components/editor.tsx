@@ -9,7 +9,7 @@ import {
     BlockNoteView,
     useBlockNote
 } from "@blocknote/react"
-import "@blocknote/react/style.css";
+import "@blocknote/core/style.css";
 
 import { useEdgeStore } from "@/lib/edgestore"
 
@@ -37,7 +37,6 @@ const Editor = ({
  
     const editor: BlockNoteEditor = useBlockNote({
         editable,
-        // @ts-ignore
         initialContent: initialContent ? JSON.parse(initialContent) as PartialBlock[] : undefined,
         onEditorContentChange: (editor) => {
             onChange(JSON.stringify(editor.topLevelBlocks, null, 2))
